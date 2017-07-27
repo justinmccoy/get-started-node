@@ -90,15 +90,17 @@ command to view your apps status and see the URL.
 
 Next, we'll add a NoSQL database to this application and set up the application so that it can run locally and on Bluemix.
 
-1. Log in to Bluemix in your Browser. Select your application and click on `Connect new` under `Connections`.
-2. Select `Cloudant NoSQL DB` and Create the service.
+1. Log in to Bluemix in your Browser. Click `Catalog` -> `Data & Analytics` -> `Cloudant NoSQL DB`
+2. Enter a unique name for your `Cloudant NoSQL DB` and click `Create`.
+3. Once your `Cloudant NoSQL DB` is provisioned, select your application and click on `Connect existing` under `Connections`.
+2. Select the `Cloudant NoSQL DB` you created and click `Connect`.
 3. Select `Restage` when prompted. Bluemix will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is only available to the application when it is running on Bluemix.
 
 ## 6. Use the database
 
 We're now going to update your local code to point to this database. We'll create a json file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in Bluemix, the credentials will be read from the VCAP_SERVICES environment variable.
 
-1. Create a file called `vcap-local.json` in the `nodejs-helloworld` directory with the following content:
+1. Create a file called `vcap-local.json` in the `get-started-node` directory with the following content:
   ```
   {
     "services": {
@@ -114,7 +116,7 @@ We're now going to update your local code to point to this database. We'll creat
   }
   ```
 
-2. Back in the Bluemix UI, select your App -> Connections -> Cloudant -> View Credentials
+2. Back in the Bluemix UI, select your application -> `Connections` -> `Cloudant NoSQL DB` -> `View Credentials`
 
 3. Copy and paste just the `url` from the credentials to the `url` field of the `vcap-local.json` file.
 

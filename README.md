@@ -71,9 +71,9 @@ Login to your Bluemix account
   bluemix login
   ```
 
-From within the *nodejs-helloworld* directory push your app to Bluemix
+From within the *get-started-node* directory push your app to Bluemix
   ```
-  cf push
+  bluemix app push
   ```
 
 This can take a minute. If there is an error in the deployment process you can use the command `cf logs <Your-App-Name> --recent` to troubleshoot.

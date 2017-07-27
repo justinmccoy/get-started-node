@@ -44,7 +44,7 @@ To deploy to Bluemix, it can be helpful to set up a manifest.yml file. One is pr
 The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. In this manifest.yml **random-route: true** generates a random route for your app to prevent your route from colliding with others.  You can replace **random-route: true** with **host: myChosenHostName**, supplying a host name of your choice. [Learn more...](https://console.bluemix.net/docs/manageapps/depapps.html#appmanifest)
  ```
  applications:
- - name: nodejs-helloworld
+ - name: GetStartedNode
    random-route: true
    memory: 128M
  ```
@@ -73,7 +73,7 @@ Login to your Bluemix account
 
 From within the *nodejs-helloworld* directory push your app to Bluemix
   ```
-  bluemix push
+  cf push
   ```
 
 This can take a minute. If there is an error in the deployment process you can use the command `cf logs <Your-App-Name> --recent` to troubleshoot.

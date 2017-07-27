@@ -81,7 +81,7 @@ This can take a minute. If there is an error in the deployment process you can u
 
 View your app at the URL listed in the output of the push command, for example, *myUrl.mybluemix.net*.  You can issue the
 ```
-bluemix apps
+cf apps
 ```
 command to view your apps status and see the URL.
 

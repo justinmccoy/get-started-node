@@ -8,13 +8,13 @@ By following this guide, you'll set up a development environment, deploy an app 
 
 ## Prerequisites
 
-You'll need a [Bluemix account](https://console.ng.bluemix.net/registration/), [Git](https://git-scm.com/downloads) [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads) and [Node](https://nodejs.org/en/)
+You'll need a [Bluemix account](https://console.ng.bluemix.net/registration/), [Git](https://git-scm.com/downloads), [Bluemix CLI](https://clis.ng.bluemix.net/ui/home.html), and [Node](https://nodejs.org/en/).
 
 ## 1. Clone the sample app
 
 Now you're ready to start working with the simple Node.js *hello world* app. Clone the repository and change to the directory to where the sample app is located.
   ```
-  git clone https://github.com/IBM-Bluemix/get-started-node
+  git clone https://github.com/kostickm/get-started-node
   ```
 
   ```
@@ -51,11 +51,11 @@ The manifest.yml includes basic information about your app, such as the name, ho
 
 ## 4. Deploy the app
 
-You can use the Cloud Foundry CLI to deploy apps.
+You can use the Bluemix CLI to deploy apps.
 
 Choose your API endpoint
    ```
-   cf api <API-endpoint>
+   bluemix api <API-endpoint>
    ```
 
 Replace the *API-endpoint* in the command with an API endpoint from the following list.
@@ -68,12 +68,12 @@ Replace the *API-endpoint* in the command with an API endpoint from the followin
 Login to your Bluemix account
 
   ```
-  cf login
+  bluemix login
   ```
 
 From within the *nodejs-helloworld* directory push your app to Bluemix
   ```
-  cf push
+  bluemix push
   ```
 
 This can take a minute. If there is an error in the deployment process you can use the command `cf logs <Your-App-Name> --recent` to troubleshoot.
@@ -81,7 +81,7 @@ This can take a minute. If there is an error in the deployment process you can u
 
 View your app at the URL listed in the output of the push command, for example, *myUrl.mybluemix.net*.  You can issue the
 ```
-cf apps
+bluemix apps
 ```
 command to view your apps status and see the URL.
 
@@ -129,5 +129,5 @@ We're now going to update your local code to point to this database. We'll creat
 
 5. Make any changes you want and re-deploy to Bluemix!
   ```
-  cf push
+  bluemix push
   ```
